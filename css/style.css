@@ -1,0 +1,121 @@
+.hero-section {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+}
+
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--color-bg));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  /* Richiama il font per gli heading che hai già impostato */
+  font-family: var(--font-family-heading);
+  font-size: 4rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text); /* Usa il colore del testo del tuo tema attivo */
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+.hero-content p {
+  font-family: var(--font-family-base);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--color-text-secondary); /* Usa il grigio chiaro del tuo tema */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+}
+
+/* Aggiungiamo solo un tocco di "glow" in più al tuo bottone primario quando è nella hero */
+.hero-content .button-primary {
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  text-transform: uppercase;
+  /* L'ombra usa la tua variabile --color-primary-soft! */
+  box-shadow: 0 4px 15px var(--color-primary-soft); 
+}
+
+.hero-content .button-primary:hover {
+  box-shadow: 0 6px 20px var(--color-primary);
+}
+
+.hero-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVE HERO */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-content .button-primary {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content .button-primary {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
