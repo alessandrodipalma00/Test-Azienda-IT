@@ -7,7 +7,7 @@ separazione tra contenuti (HTML5), stile (CSS) e comportamento (JS)
 - `/index.html` -> Home Page: Presentazione della missione dell'azienda e panoramica del team e dei giochi.
 - `/pages/ceo-curriculum.html` -> Pagina Curriculum: Profilo e competenze del CEO.
 - `/pages/pm-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Project Manager.
-- `/pages/tl-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Sviluppatore Tecnico.
+- `/pages/tl-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Lead Developer.
 - `/css/`
   - `style.css` -> Stile globale del sito
 - `/js/`
@@ -40,3 +40,4 @@ Le logiche comportamentali del sito sono centralizzate nel file esterno `/js/scr
 - [ ] Scrittura della logica JavaScript per il funzionamento del menu responsive.
 - [ ] Implementazione del controllo JS per il simulatore del lancio dei dadi nella Home.
 - [ ] Scrittura di alcuni commenti con spiegazione (HTML, CSS, JS) all'interno del codice.
+
