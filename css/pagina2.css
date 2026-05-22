@@ -124,7 +124,7 @@
 }
 
 
-/* --- ══ SEZIONE SKILL ══ --- */
+
 .skills-section .section-title {
     margin-bottom: 16px;
 }
@@ -136,7 +136,7 @@
 }
 
 
-/* --- ══ SEZIONE 4 CARD (GRIGLIA PROGETTI) ══ --- */
+
 .cards-section {
     background: transparent; /* Trasparente per mostrare lo sfondo del body (--color-bg) */
     border: none;
@@ -149,7 +149,6 @@
     gap: 24px;
 }
 
-/* Singola Card di Progetto */
 .card {
     background: var(--color-surface); /* Sfondo della card coerente col tema */
     border: 1px solid var(--color-border);
@@ -166,7 +165,7 @@
     border-color: var(--color-primary); /* Illumina il bordo con il colore primario del tema */
 }
 
-/* Contenitore Box Immagine */
+
 .card-img {
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -185,7 +184,6 @@
     transform: scale(1.05);
 }
 
-/* Label della Card */
 .card-label {
     padding: 16px;
     font-size: 0.95rem;
@@ -203,7 +201,6 @@
 }
 
 
-/* --- ══ STRUTTURA RESPONSIVE (MANTENUTA) ══ --- */
 @media (max-width: 992px) {
     .profile-body {
         flex-direction: column;
