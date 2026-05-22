@@ -7,7 +7,7 @@ separazione tra contenuti (HTML5), stile (CSS) e comportamento (JS)
 - `/index.html` -> Home Page: Presentazione della missione dell'azienda e panoramica del team e dei giochi.
 - `/pages/ceo-curriculum.html` -> Pagina Curriculum: Profilo e competenze del CEO.
 - `/pages/pm-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Project Manager.
-- `/pages/tl-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Lead Developer.
+- `/pages/tl-curriculum.html` -> Pagina Curriculum: Profilo e competenze del Sviluppatore Tecnico.
 - `/css/`
   - `style.css` -> Stile globale del sito
 - `/js/`

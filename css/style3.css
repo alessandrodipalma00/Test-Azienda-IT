@@ -1,10 +1,7 @@
-/* ==========================================================================
-   BOARDTECH STUDIO - SEZIONE CURRICULUM (COLORI ADATTATI AI TEMI GLOBALI)
-   ========================================================================== */
 
 @import url("tema.css");
 
-/* --- STRUTTURA DEI CONTENITORI --- */
+
 .profile-section,
 .skills-section,
 .cards-section {
@@ -18,7 +15,6 @@
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* --- ══ SEZIONE PROFILO ══ --- */
 .profile-top {
     display: flex;
     align-items: center;
@@ -26,7 +22,6 @@
     margin-bottom: 24px;
 }
 
-/* Foto Profilo Circolare con Glow dinamico del Tema */
 .avatar {
     width: 150px;
     height: 150px;
@@ -41,7 +36,7 @@
 
 .avatar:hover {
     transform: scale(1.03);
-    border-color: var(--color-accent); /* Cambia sul colore di accento all'hover */
+    border-color: var(--color-accent); 
 }
 
 .avatar img {
