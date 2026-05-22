@@ -1,0 +1,231 @@
+/* ==========================================================================
+   BOARDTECH STUDIO - SEZIONE CURRICULUM (COLORI ADATTATI AI TEMI GLOBALI)
+   ========================================================================== */
+
+@import url("tema.css");
+
+/* --- STRUTTURA DEI CONTENITORI --- */
+.profile-section,
+.skills-section,
+.cards-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--color-surface); /* Colore della superficie del tema attivo */
+    border: 1px solid var(--color-border); /* Bordi nativi del tema */
+    border-radius: 16px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- ══ SEZIONE PROFILO ══ --- */
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 24px;
+}
+
+/* Foto Profilo Circolare con Glow dinamico del Tema */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid var(--color-primary); /* Colore primario del tema */
+    background: var(--color-surface-secondary);
+    box-shadow: 0 0 15px var(--color-primary-soft); /* Trasparenza nativa del tema */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.03);
+    border-color: var(--color-accent); /* Cambia sul colore di accento all'hover */
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dati Anagrafici */
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-name {
+    font-size: 2.8rem;
+    color: var(--color-text); /* Testo principale del tema */
+    line-height: 1.1;
+}
+
+.profile-role {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-accent); /* Accento del tema (oro, viola, blu, ecc.) */
+}
+
+.profile-company {
+    font-size: 1rem;
+    color: var(--color-text-muted); /* Testo opaco/secondario del tema */
+    font-weight: 500;
+}
+
+/* Divisore Orizzontale Dinamico */
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-border) 0%, var(--color-border-soft) 100%);
+    margin: 24px 0;
+}
+
+/* Corpo del Profilo */
+.profile-body {
+    display: flex;
+    gap: 40px;
+}
+
+.profile-body-left {
+    flex: 0 0 250px;
+}
+
+.profile-body-left p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text); /* Colore testo principale */
+    line-height: 1.5;
+}
+
+.profile-body-right {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.profile-body-right .section-title {
+    text-transform: lowercase; /* Mantiene lo stile grafico minuscolo richiesto */
+}
+
+.profile-body-right p {
+    font-size: 1rem;
+    color: var(--color-text-secondary); /* Testo secondario del tema */
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/* --- ══ SEZIONE SKILL ══ --- */
+.skills-section .section-title {
+    margin-bottom: 16px;
+}
+
+.skills-section p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+
+/* --- ══ SEZIONE 4 CARD (GRIGLIA PROGETTI) ══ --- */
+.cards-section {
+    background: transparent; /* Trasparente per mostrare lo sfondo del body (--color-bg) */
+    border: none;
+    padding: 0;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Singola Card di Progetto */
+.card {
+    background: var(--color-surface); /* Sfondo della card coerente col tema */
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary); /* Illumina il bordo con il colore primario del tema */
+}
+
+/* Contenitore Box Immagine */
+.card-img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background-color: var(--color-surface-secondary); /* Colore di fallback per il caricamento */
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+/* Label della Card */
+.card-label {
+    padding: 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: center;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.card:hover .card-label {
+    color: var(--color-accent); /* Il testo del titolo prende l'accento cromatico del gioco */
+    background: var(--color-surface-secondary); /* Scurisce/Schiarisce leggermente lo sfondo del testo all'hover */
+}
+
+
+/* --- ══ STRUTTURA RESPONSIVE (MANTENUTA) ══ --- */
+@media (max-width: 992px) {
+    .profile-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .profile-body-left {
+        flex: 1 1 auto;
+    }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    .cards-grid {
+        grid-template-columns: 100%;
+        gap: 16px;
+    }
+}
