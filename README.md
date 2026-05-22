@@ -27,16 +27,16 @@ Le logiche comportamentali del sito sono centralizzate nel file esterno `/js/scr
 - **Meccanismo:** Lo script intercetta l'icona del menu su dispositivi mobili e ascolta l'evento di click. 
 - **Logica:** Ogni volta che l'utente clicca l'icona, il programma seleziona la lista dei link di navigazione. Tramite il metodo `.classList.toggle()`, aggiunge o rimuove una classe CSS (es. `active`) che cambia la visibilità del menu da nascosto a visibile, garantendo un layout fluido su smartphone.
 
-### Funzionalità 2: Simulatore Lancio Dado Interattivo (`index.html`)
-- **Meccanismo:** Lo script seleziona il bottone "Lancia il Dado" nella Home Page tramite il suo ID e si mette in ascolto dell'evento.
-- **Logica:** Quando l'utente clicca sul tasto, la funzione intercetta l'azione. Successivamente utilizza la logica `Math.random()` per generare un numero casuale da 1 a 6. Preleva il valore numerico, lo associa a una determinata stringa o immagine del dado e mostra a schermo il risultato in un div dedicato per creare engagement.
+### Funzionalità index.html`
+La pagina `index.html` è la home aziendale che presenta la missione del progetto, mostra le tre categorie di giochi principali, introduce il team e include una sezione di contatto con form di registrazione. La struttura prevede una hero section dinamica, una griglia di card, la sezione "Dietro le quinte" e il footer finale.
+
+
 
         To-Do List
 
 - [x] Creazione delle 4 pagine HTML collegate (`index.html` e le 3 pagine in `/pages/`).
-- [ ] Sviluppo degli stili CSS centralizzati e ottimizzati in `style.css`.
-- [ ] Creazione della struttura globale della Navbar (Menu) e del Footer.
-- [ ] Impaginazione della griglia flessibile e creazione delle card descrittive per l'accesso ai curriculum.
-- [ ] Scrittura della logica JavaScript per il funzionamento del menu responsive.
-- [ ] Implementazione del controllo JS per il simulatore del lancio dei dadi nella Home.
-- [ ] Scrittura di alcuni commenti con spiegazione (HTML, CSS, JS) all'interno del codice.
+- [x] Sviluppo degli stili CSS centralizzati e ottimizzati in `style.css`.
+- [x] Creazione della struttura globale della Navbar (Menu) e del Footer.
+- [x] Impaginazione della griglia flessibile e creazione delle card descrittive per l'accesso ai curriculum.
+- [x] Scrittura di alcuni commenti con spiegazione (HTML, CSS, JS) all'interno del codice.
+- [x] Creazione delle pagine con la descrizione dei principal.

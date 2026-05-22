@@ -1,25 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let cards = document.querySelectorAll(".card");
+const form = document.querySelector(".form-registrazione");
 
-  cards.forEach(function (card) {
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    card.addEventListener("click", function () {
+  // Prendo i valori dei campi
+  const nome = document.getElementById("nome").value;
+  const cognome = document.getElementById("cognome").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const conferma = document.getElementById("conferma").value;
 
-      // Se la card è già attiva, la chiude
-      if (card.classList.contains("active")) {
-        card.classList.remove("active");
-        return;
-      }
+  // controllo la password
+  if (password !== conferma) {
+    alert("Le password non coincidono!");
+    return;
+  }
+  if (password.length < 6) {
+    alert("La password deve contenere almeno 6 caratteri.");
+    return;
+  }
+  alert(`Registrazione completata!\nBenvenuto ${nome} ${cognome}`);
 
-      // Chiude tutte le altre card
-      cards.forEach(function (c) {
-        c.classList.remove("active");
-      });
-
-      // Attiva quella cliccata
-      card.classList.add("active");
-    });
-
-  });
+  // Reset del form
+  form.reset();
 });
-
