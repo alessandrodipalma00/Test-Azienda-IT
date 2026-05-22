@@ -1,0 +1,349 @@
+.hero-section {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--color-bg));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    /* Richiama il font per gli heading che hai già impostato */
+    font-family: var(--font-family-heading);
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text);
+    /* Usa il colore del testo del tuo tema attivo */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content p {
+    font-family: var(--font-family-base);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--color-text-secondary);
+    /* Usa il grigio chiaro del tuo tema */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Aggiungiamo solo un tocco di "glow" in più al tuo bottone primario quando è nella hero */
+.hero-content .button-primary {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    /* L'ombra usa la tua variabile --color-primary-soft! */
+    box-shadow: 0 4px 15px var(--color-primary-soft);
+}
+
+.hero-content .button-primary:hover {
+    box-shadow: 0 6px 20px var(--color-primary);
+}
+
+.hero-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sezione-categorie {
+    padding: 80px 0;
+    background-color: var(--color-bg);
+    /* Richiama lo sfondo globale */
+}
+
+/* --- Titolino --- */
+.header-categorie {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-categorie h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.header-categorie p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+}
+
+.griglia-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-gioco {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Taglia l'immagine per farle seguire gli angoli curvi */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-gioco:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px var(--color-primary-soft);
+    border-color: var(--color-primary);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom leggero dell'immagine in hover */
+.card-gioco:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Fa in modo che il bottone stia sempre in fondo */
+}
+
+.card-profilo {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 30px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.foto-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+    background: var(--color-surface-secondary);
+}
+
+.foto-cv {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.ruolo-card {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text-muted);
+}
+
+.btn-card {
+    margin-top: auto;
+    width: 100%;
+}
+
+
+.sezione-chi-siamo {
+    padding: 80px 0;
+    background-color: var(--color-surface-secondary);
+}
+
+/* --- Immagine Panoramica --- */
+.immagine-studio-wrapper {
+    width: 100%;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Un'ombra profonda */
+}
+
+.immagine-studio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Taglia l'immagine perfettamente dentro il contenitore */
+    display: block;
+}
+
+/* --- Testo Introduttivo (Article) --- */
+.testo-studio {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    /* Centra il testo e dà respiro prima delle card */
+    text-align: center;
+}
+
+.testo-studio h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+    line-height: 1.1;
+}
+
+.testo-studio p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* RESPONSIVE CHI SIAMO */
+@media (max-width: 768px) {
+    .sezione-chi-siamo {
+        padding: 60px 0;
+    }
+
+    .immagine-studio-wrapper {
+        height: 300px;
+        margin-bottom: 30px;
+    }
+
+    .testo-studio {
+        margin-bottom: 40px;
+    }
+
+    .testo-studio h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .testo-studio p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 640px) {
+    .sezione-chi-siamo {
+        padding: 40px 0;
+    }
+
+    .immagine-studio-wrapper {
+        height: 200px;
+        margin-bottom: 25px;
+    }
+
+    .testo-studio {
+        margin-bottom: 30px;
+    }
+
+    .testo-studio h1 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .testo-studio p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+
+
+/* RESPONSIVE HERO */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-content .button-primary {
+        font-size: 1rem;
+        padding: 12px 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-content .button-primary {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
