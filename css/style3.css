@@ -36,7 +36,7 @@
 
 .avatar:hover {
     transform: scale(1.03);
-    border-color: var(--color-accent); 
+    border-color: var(--color-accent); /* Cambia sul colore di accento all'hover */
 }
 
 .avatar img {
@@ -54,7 +54,7 @@
 
 .profile-name {
     font-size: 2.8rem;
-    color: var(--color-text); /* Testo principale del tema */
+    color: var(--color-text); 
     line-height: 1.1;
 }
 
@@ -118,8 +118,6 @@
     text-align: justify;
 }
 
-
-/* --- ══ SEZIONE SKILL ══ --- */
 .skills-section .section-title {
     margin-bottom: 16px;
 }
@@ -131,7 +129,6 @@
 }
 
 
-/* --- ══ SEZIONE 4 CARD (GRIGLIA PROGETTI) ══ --- */
 .cards-section {
     background: transparent; /* Trasparente per mostrare lo sfondo del body (--color-bg) */
     border: none;
@@ -198,7 +195,6 @@
 }
 
 
-/* --- ══ STRUTTURA RESPONSIVE (MANTENUTA) ══ --- */
 @media (max-width: 992px) {
     .profile-body {
         flex-direction: column;
