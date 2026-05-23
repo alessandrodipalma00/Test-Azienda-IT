@@ -142,7 +142,7 @@ a {
 }
 
 a:hover {
-    color: var(--color-primary-hover);
+    color: var(--color-text);
 }
 
 
@@ -211,6 +211,7 @@ body.theme-mature .button-primary {
     display: flex;
     align-items: center;
     gap: 10px; 
+    cursor: pointer;
 }
 
 .logo:hover {
@@ -277,6 +278,7 @@ body.theme-mature .button-primary {
     text-transform: uppercase;
     margin-bottom: 16px;
     color: var(--color-text);
+
 }
 
 .footer-nav ul {
