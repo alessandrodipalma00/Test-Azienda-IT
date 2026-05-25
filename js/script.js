@@ -2,6 +2,7 @@ const form = document.querySelector(".form-registrazione");
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
+  // blocco il refresh automatico della pagina
 
   // Prendo i valori dei campi
   const nome = document.getElementById("nome").value;
