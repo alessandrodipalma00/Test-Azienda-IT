@@ -1,3 +1,4 @@
+/* sezione video */
 .hero-section {
     position: relative;
     height: 500px;
@@ -8,68 +9,41 @@
     overflow: hidden;
 }
 
+/* video */
 .hero-video {
     position: absolute;
+    /* spostano l'angolo in alto a sinistra del video al
+    centro del contenitore, questo decenstra
+    il video verso il basso e verso destra */
     top: 50%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;
+    /* questo corregge il posizionamento precedente
+    in modo tale da centrare l'elemento rispetto al contenitore */
     transform: translate(-50%, -50%);
+    /* taglia i bordi in eccesso evita che il video
+    si modifichi in modo innaturale quando si ridimensina la finestra */
     object-fit: cover;
+    /* definisce il posizionamento degli elementi
+    in "profondità, 1 = il video rimarrà sullo sfondo
+    rispetto agli altri elementi */
     z-index: 1;
+    /* evita qualsiasi interazione del click del mouse dell'utente */
     pointer-events: none;
 }
 
+/* div vuoto per creare la sfumatura sul video */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    /* genera una sfumatura tra due colori
+    to bottom -> direzione sfumatura */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), var(--color-bg));
     z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    /* Richiama il font per gli heading che hai già impostato */
-    font-family: var(--font-family-heading);
-    font-size: 4rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-text);
-    /* Usa il colore del testo del tuo tema attivo */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-}
-
-.hero-content p {
-    font-family: var(--font-family-base);
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: var(--color-text-secondary);
-    /* Usa il grigio chiaro del tuo tema */
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
-}
-
-/* Aggiungiamo solo un tocco di "glow" in più al tuo bottone primario quando è nella hero */
-.hero-content .button-primary {
-    font-size: 1.2rem;
-    padding: 15px 35px;
-    text-transform: uppercase;
-    /* L'ombra usa la tua variabile --color-primary-soft! */
-    box-shadow: 0 4px 15px var(--color-primary-soft);
-}
-
-.hero-content .button-primary:hover {
-    box-shadow: 0 6px 20px var(--color-primary);
 }
 
 .hero-container {
@@ -80,10 +54,55 @@
     justify-content: center;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* titolo */
+.hero-content h1 {
+    /* Richiama il font per gli heading già impostato */
+    font-family: var(--font-family-heading);
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text);
+    /* sposta l'ombra di 2px verso destra, verso il basso
+    e da una sfocatura di 10px */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content p {
+    font-family: var(--font-family-base);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--color-text-secondary);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* bottone */
+.hero-content .button-primary {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px var(--color-primary-soft);
+}
+
+/* glow del bottone */
+.hero-content .button-primary:hover {
+    /* ombra del bottone
+    centrata rispetto all'elemento
+    si sposta di 6 verso il basso ed è sfumata di 20px */
+    box-shadow: 0 6px 20px var(--color-primary);
+}
+
 .sezione-categorie {
     padding: 80px 0;
     background-color: var(--color-bg);
-    /* Richiama lo sfondo globale */
 }
 
 /* --- Titolino --- */
@@ -103,8 +122,15 @@
     color: var(--color-text-secondary);
 }
 
+/* impostazione griglia cards */
 .griglia-card {
     display: grid;
+    /* repeat dice al browser di ripetere
+    una istruzione per creare le colonne
+    minmax imposta dimensione minima della card che non
+    potrà essere più stretta di 300px
+    autofit per far calcolare al broser quante
+    colonne da almeno 300px entrano nello schermo */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
@@ -113,8 +139,8 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    overflow: hidden;
     /* Taglia l'immagine per farle seguire gli angoli curvi */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -126,6 +152,7 @@
     border-color: var(--color-primary);
 }
 
+/* crea un contenitore che fa da "cornice" fissa all'immagine */
 .card-img-wrapper {
     width: 100%;
     height: 220px;
@@ -148,72 +175,16 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
+    /* il blocco si espande in altezza fino a occupare 
+    tutto lo spazio disponibile rimasto */
     flex-grow: 1;
-    /* Fa in modo che il bottone stia sempre in fondo */
 }
-
-.card-profilo {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 18px;
-    padding: 30px 25px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.foto-wrapper {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--color-primary);
-    background: var(--color-surface-secondary);
-}
-
-.foto-cv {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.ruolo-card {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.card-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    color: var(--color-text-muted);
-}
-
-.btn-card {
-    margin-top: auto;
-    width: 100%;
-}
-
 
 .sezione-chi-siamo {
     padding: 80px 0;
     background-color: var(--color-surface-secondary);
 }
 
-/* --- Immagine Panoramica --- */
 .immagine-studio-wrapper {
     width: 100%;
     height: 400px;
@@ -237,7 +208,7 @@
 .testo-studio {
     max-width: 800px;
     margin: 0 auto 60px auto;
-    /* Centra il testo e dà respiro prima delle card */
+    /* Centra il testo e dà spazio prima delle card */
     text-align: center;
 }
 
@@ -252,6 +223,69 @@
     font-size: 1.2rem;
     color: var(--color-text-secondary);
     line-height: 1.6;
+}
+
+.card-profilo {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    padding: 30px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* contenitore foto */
+.foto-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+    background: var(--color-surface-secondary);
+}
+
+.foto-cv {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* dice quale parte della foto 
+    mantenere visibile al momento del taglio */
+    object-position: center;
+    /* rende l'immagine un elemento blocco */
+    display: block;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.ruolo-cv {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text-muted);
+}
+
+.btn-cv {
+    /* inserendo auto come margin top
+    il browser calcola tutto lo spazio vuoto rimasto
+    nella card e lo traforma in margine sopra il pulsante
+    in questo modo il pulsante di troverà alla fine della card */
+    margin-top: auto;
+    width: 100%;
 }
 
 .sezione-contatti {
@@ -310,6 +344,8 @@
 }
 
 .form-registrazione button {
+    /* dice al pulsante di estendersi dalla prima
+    all'ultima colonna della griglia */
     grid-column: 1 / -1;
     padding: 16px 24px;
     width: fit-content;
