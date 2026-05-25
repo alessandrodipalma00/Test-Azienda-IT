@@ -1,54 +1,71 @@
-/* ==========================================================================
-   BOARDTECH STUDIO - SEZIONE CURRICULUM (COLORI ADATTATI AI TEMI GLOBALI)
-   ========================================================================== */
-
+/* Importazione del tema scelto */
 @import url("tema.css");
 
-/* --- STRUTTURA DEI CONTENITORI --- */
+/* Impostazione dei contenitori per: profilo, skill e cards */
 .profile-section,
 .skills-section,
 .cards-section {
     width: 90%;
+    /* con max width la pagina non diventa troppo larga
+    su monitor grandi */
     max-width: 1200px;
+    /* centra blocchi orizzontalmente 
+    il valore di 40px si applica ai margini top/bottom
+    il valore auto ai margini right/left, quindi prende tutto lo spazio
+    vuoto rimasto nella riga e lo distribuisce equamente da entrambe le parti*/
     margin: 40px auto;
     padding: 30px;
-    background: var(--color-surface); /* Colore della superficie del tema attivo */
-    border: 1px solid var(--color-border); /* Bordi nativi del tema */
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: 16px;
+    /* transition gestisce due transizioni separate dalla virgola
+    Struttura: proprietà (cosa deve animare), durata, 
+    andamento (ritmo dell'animazione, inizia piano, accelera al centro e rallenta alla fine) */
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/*  sezione profilo */
+/* imposta la parte iniziale del profilo avatar + parte a destra
+Affianca immagine del profilo con flex, centra verticalmente
+gli elementi e distanzia la foto dal testo di 32px */
 .profile-top {
     display: flex;
     align-items: center;
     gap: 32px;
     margin-bottom: 24px;
 }
-
-/* Foto Profilo Circolare con Glow dinamico del Tema */
+ 
+/* sezione immagine */
 .avatar {
+    /* crea un box 150x150 */
     width: 150px;
     height: 150px;
+    /* diventa un cerchio perfetto */
     border-radius: 50%;
+    /* toglie quasiasi pezzo di immagine che esce dal cerchio */
     overflow: hidden;
-    flex-shrink: 0;  /*fa si che l'immagine non si rimpicciolisce*/
-    border: 3px solid var(--color-primary); /* Colore primario del tema */
+    /* non fa rimpicciolire o schiacciare al foto se lo spazio diminuisce */
+    flex-shrink: 0;
+    border: 3px solid var(--color-primary); 
     background: var(--color-surface-secondary);
-    box-shadow: 0 0 15px var(--color-primary-soft); /* Trasparenza nativa del tema */
+    /* crea l'alone luminoso attono alla foto
+    (spostamento orizzontale, verticale, sfocatura dell'ombra) */
+    box-shadow: 0 0 15px var(--color-primary-soft); 
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .avatar:hover {
     transform: scale(1.03);
-    border-color: var(--color-accent); /* Cambia sul colore di accento all'hover */
+    border-color: var(--color-accent); 
 }
 
 .avatar img {
     width: 100%;
     height: 100%;
+    /* la foto si adatta al cerchio senza deformarsi
+    taglia i lati se necessario */
     object-fit: cover;
 }
+
 
 /* Dati Anagrafici */
 .profile-meta {
@@ -57,31 +74,40 @@
     gap: 4px;
 }
 
+
 .profile-name {
     font-size: 2.8rem;
-    color: var(--color-text); /* Testo principale del tema */
+    color: var(--color-text); 
+    /* controlla l'interlinea */
     line-height: 1.1;
 }
 
 .profile-role {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--color-accent); /* Accento del tema (oro, viola, blu, ecc.) */
+    /* tema oro, viola, blu */
+    color: var(--color-accent); 
 }
 
 .profile-company {
     font-size: 1rem;
-    color: var(--color-text-muted); /* Testo opaco/secondario del tema */
+    /* Testo opaco del tema */
+    color: var(--color-text-muted); 
     font-weight: 500;
 }
 
-/* Divisore Orizzontale Dinamico */
+/* Divisore Orizzontale */
 .divider {
     border: 0;
     height: 1px;
+    /* crea lo sfumato sulla linea, si muove in orizzontale
+    da sinistra verso destra con la variabile color-border dallo 0%
+    fino ad arrivare al 100% con un colore quasi trasparente */
     background: linear-gradient(90deg, var(--color-border) 0%, var(--color-border-soft) 100%);
+    /* 24px top/bottom, 0 r/l */
     margin: 24px 0;
 }
+
 
 /* Corpo del Profilo */
 .profile-body {
@@ -90,17 +116,22 @@
 }
 
 .profile-body-left {
+    /* 0 (flex grow): la colonna non deve crescere oltre la misura stabilita
+    0 (flex shrink): non deve rimpicciolirsi sotto la misura stabilita 
+    250: imposta la larghezza della colonna a 250px */
     flex: 0 0 250px;
 }
 
 .profile-body-left p {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-text); /* Colore testo principale */
+    color: var(--color-text);
     line-height: 1.5;
 }
 
+
 .profile-body-right {
+    /* prende tutto lo spazio rimasto libero nella pagina */
     flex: 1;
 }
 
@@ -109,22 +140,25 @@
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: 12px;
+    /* avvicina leggermente le lettere */
     letter-spacing: -0.5px;
 }
 
+/* selettore combinato */
 .profile-body-right .section-title {
-    text-transform: lowercase; /* Mantiene lo stile grafico minuscolo richiesto */
+    /* stile grafico minuscolo */
+    text-transform: lowercase; 
 }
 
 .profile-body-right p {
     font-size: 1rem;
-    color: var(--color-text-secondary); /* Testo secondario del tema */
+    color: var(--color-text-secondary);
     line-height: 1.6;
+    /* testo giustificato */
     text-align: justify;
 }
 
-
-
+/* blocco skill e competenze */
 .skills-section .section-title {
     margin-bottom: 16px;
 }
@@ -135,49 +169,58 @@
     line-height: 1.6;
 }
 
-
-
+/* sezione delle card */
 .cards-section {
-    background: transparent; /* Trasparente per mostrare lo sfondo del body (--color-bg) */
+    background: transparent; 
     border: none;
     padding: 0;
 }
 
 .cards-grid {
+    /* crea una griglia da 4 colonne */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
+/* Singola Card */
 .card {
-    background: var(--color-surface); /* Sfondo della card coerente col tema */
+    background: var(--color-surface); 
     border: 1px solid var(--color-border);
     border-radius: 12px;
+    /* toglie quasiasi pezzo di immagine che esce dal cerchio */
     overflow: hidden;
-    height: auto;
     display: flex;
     flex-direction: column;
+    /* cubit-bezier usa una curva matematica che con quella combinazione
+    di numeri da un effetto ammortizzato */
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
     cursor: pointer;
 }
 
+
 .card:hover {
     transform: translateY(-6px);
-    border-color: var(--color-primary); /* Illumina il bordo con il colore primario del tema */
+    /* illumina il bordo con il colore del tema */
+    border-color: var(--color-primary); 
 }
 
-
+/* Contenitore Box Immagine */
 .card-img {
     width: 100%;
-     aspect-ratio: 2 / 2;  /* imposta il rapporto tra larghezza e altezza*/
-     overflow: hidden; /* nasconde tutto ciò che esce dai bordi del contenitore */
-    background-color: var(--color-surface-secondary); /* Colore di fallback per il caricamento */
+    /* imposta la proporzione tra larghezza e altezza
+    la "scatola" sarà sempre più alta che larga
+    il browser calcola automaticamente l'altezza per mantenere 
+    intatta la proporzione 2 a 2 */
+    aspect-ratio: 2 / 2;
+    overflow: hidden;
+    background-color: var(--color-surface-secondary); 
 }
 
 .card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* riempie completamente un elemento nel suo contenitore */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -185,6 +228,7 @@
     transform: scale(1.05);
 }
 
+/* Label della Card */
 .card-label {
     padding: 16px;
     font-size: 0.95rem;
@@ -197,11 +241,11 @@
 }
 
 .card:hover .card-label {
-    color: var(--color-accent); /* Il testo del titolo prende l'accento cromatico del gioco */
-    background: var(--color-surface-secondary); /* Scurisce/Schiarisce leggermente lo sfondo del testo all'hover */
+    color: var(--color-accent); 
+    background: var(--color-surface-secondary); 
 }
 
-
+/* schermi tablet */
 @media (max-width: 992px) {
     .profile-body {
         flex-direction: column;
@@ -215,7 +259,7 @@
         gap: 20px;
     }
 }
-
+/* schermi smartphone */
 @media (max-width: 640px) {
     .profile-top {
         flex-direction: column;
@@ -223,6 +267,7 @@
         gap: 16px;
     }
     .cards-grid {
+        /* la griglia diventa a colonna singola */
         grid-template-columns: 100%;
         gap: 16px;
     }

@@ -99,10 +99,12 @@ body.theme-mature {
 *::before,
 *::after {
     box-sizing: border-box;
+    /* fa si che padding e border vengano inclusi nella larghezza*/
 }
 
 html {
     scroll-behavior: smooth;
+    /* fa si che la pagina scorra più lentamente*/
 }
 
 body {
@@ -155,6 +157,7 @@ a:hover {
 
 .button {
     display: inline-flex;
+    /* crea un contenitore flexbox che però si comporta come un elemento inline*/
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -189,6 +192,7 @@ body.theme-mature .button-primary {
     background: var(--color-bg);
     border-bottom: 2px solid var(--color-border); 
     position: sticky;
+    /* la navbar rimane attaccata in alto quando scendi giù con la pagina*/
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
